@@ -1,0 +1,18 @@
+{
+  "name": "OKC Show Likes",
+  "description": "show likes for OKC to resolve curiosity",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["nativeMessaging", "storage", "tabs", "idle"],
+  "host_permissions": ["https://www.okcupid.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.okcupid.com/*"],
+      "js": ["WhoLikesMe.js"],
+      "css": ["style.css"]
+    }
+  ]
+}
